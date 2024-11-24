@@ -12,7 +12,7 @@ module.exports = {
     await Spot.bulkCreate([
       {
         ownerId: 1,
-        address: '678 Silicon Valley Blvd',
+        address: '456 Silicon Valley Blvd',
         city: 'Mountain View',
         state: 'California',
         country: 'United States of America',
