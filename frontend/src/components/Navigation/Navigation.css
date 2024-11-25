@@ -1,0 +1,19 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.nav-icon {
+  color: #d13f3f;
+  font-size: 35px;
+  margin: 0 15px;
+  padding: 10px;
+  transition: 0.1s;
+}
+
+.nav-icon:hover {
+  cursor: pointer;
+  color: #af0b0b;
+}

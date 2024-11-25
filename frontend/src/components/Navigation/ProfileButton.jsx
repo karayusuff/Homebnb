@@ -1,11 +1,12 @@
-import { PiUserList } from "react-icons/pi";
+import { CiUser } from "react-icons/ci";
+import './Navigation.css';
 
 const ProfileButton = () => {
   return (
     <div>
-      <PiUserList />
+      <CiUser className="nav-icon" title="Profile" />
     </div>
-  )
-}
+  );
+};
 
 export default ProfileButton;
