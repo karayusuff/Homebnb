@@ -2,11 +2,11 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import HomeButton from './HomeButton';
-// import LoginButton from './LoginButton';
 import { CiLogin } from "react-icons/ci";
-// import SignupButton from './SignupButton';
+import { CiEdit } from "react-icons/ci";
 import OpenModalButton from '../OpenModalButton/OpenModalButton';
 import LoginFormModal from '../LoginFormModal/LoginFormModal';
+import SignupFormModal from '../SignupFormModal/SignupFormModal'
 import './Navigation.css';
 
 function Navigation({ isLoaded }) {
@@ -25,7 +25,10 @@ function Navigation({ isLoaded }) {
         />
       </div>
       <div>
-        <NavLink to="/signup">Sign Up</NavLink>
+        <OpenModalButton
+         modalComponent={<SignupFormModal />}
+         buttonText={<CiEdit title="Signup" />}
+        />   
       </div>
     </div>
   );
@@ -41,26 +44,3 @@ function Navigation({ isLoaded }) {
 }
 
 export default Navigation;
-
-
-{/* <div className="nav-bar">
-<NavLink to="/signup">
-  <SignupButton />
-</NavLink>
-<NavLink to="/login">
-  <LoginButton />
-</NavLink>
-</div> */}
-
-
-{/* <div className="nav-bar">
-<li>
-  <OpenModalButton
-    buttonText="Log In"
-    modalComponent={<LoginFormModal />}
-  />
-</li>
-<li>
-  <NavLink to="/signup">Sign Up</NavLink>
-</li>
-</div> */}
