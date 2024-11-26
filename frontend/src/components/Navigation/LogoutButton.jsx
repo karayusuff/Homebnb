@@ -3,9 +3,9 @@ import './Navigation.css';
 
 const LogoutButton = ({ onClick }) => {
   return (
-    <div onClick={onClick}>
-      <CiLogout className="nav-icon" title="Logout" />
-    </div>
+    <button onClick={onClick} className="logout-icon">
+      <CiLogout title="Logout" />
+    </button>
   );
 };
 

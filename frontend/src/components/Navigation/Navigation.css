@@ -17,3 +17,58 @@
   cursor: pointer;
   color: #af0b0b;
 }
+
+.logout-icon {
+  all: unset;
+  color: #d13f3f;
+  margin: 0 15px;
+  font-size: 30px;
+  padding: 10px;
+  transition: 0.1s;
+}
+
+.logout-icon:hover {
+  cursor: pointer;
+  color: #af0b0b;
+}
+
+.profile-icon {
+  all: unset;
+  color: #d13f3f;
+  font-size: 35px;
+  margin: 0 15px;
+  padding: 10px;
+  transition: 0.1s;
+}
+
+.profile-icon:hover {
+  cursor: pointer;
+  color: #af0b0b;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 75px;
+  right: 25px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 6px #d13f3f;
+  list-style: none;
+}
+
+.profile-dropdown li {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.profile-dropdown li:hover {
+  cursor: pointer;
+  color: #d13f3f;
+}
+
+.hidden {
+  display: none;
+}
