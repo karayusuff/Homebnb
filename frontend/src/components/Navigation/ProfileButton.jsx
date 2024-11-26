@@ -1,9 +1,12 @@
-import { CiUser } from "react-icons/ci";
-import './Navigation.css';
 import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import * as sessionActions from '../../store/session'
+import { CiUser } from "react-icons/ci";
+import * as sessionActions from '../../store/session';
+import './Navigation.css';
 import LogoutButton from "./LogoutButton";
+import OpenModalButton from '../OpenModalButton/OpenModalButton';
+import LoginFormModal from '../LoginFormModal/LoginFormModal';
+import SignupFormModal from '../SignupFormModal/SignupFormModal';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -19,7 +22,7 @@ function ProfileButton({ user }) {
     if (!showMenu) return;
 
     const closeMenu = (e) => {
-      if (ulRef.current && !ulRef.current.contains(e.target)) {
+      if (!ulRef.current.contains(e.target)) {
         setShowMenu(false);
       }
     };
@@ -42,14 +45,33 @@ function ProfileButton({ user }) {
         <CiUser title="Profile" />
       </button>
       <ul className={ulClassName} ref={ulRef}>
-        <li>{user.username}</li>
-        <li>{user.firstName} {user.lastName}</li>
-        <li>{user.email}</li>
-        <li>
-          <button onClick={logout} className="logout-icon">
-            <LogoutButton />
-          </button>
-        </li>
+        {user ? (
+          <>
+            <li>{user.username}</li>
+            <li>{user.firstName} {user.lastName}</li>
+            <li>{user.email}</li>
+            <li>
+              <button onClick={logout} className="logout-icon">
+                <LogoutButton />
+              </button>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <OpenModalButton
+                buttonText="Log In"
+                modalComponent={<LoginFormModal />}
+              />
+            </li>
+            <li>
+              <OpenModalButton
+                buttonText="Sign Up"
+                modalComponent={<SignupFormModal />}
+              />
+            </li>
+          </>
+        )}
       </ul>
     </>
   );
