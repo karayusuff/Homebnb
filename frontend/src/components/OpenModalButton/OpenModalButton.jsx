@@ -14,7 +14,11 @@ function OpenModalButton({
     if (typeof onButtonClick === "function") onButtonClick();
   };
 
-  return <button onClick={onClick}>{buttonText}</button>;
+  return (
+    <div onClick={onClick} className='nav-icon'>
+      {buttonText}
+      </div>
+  )
 }
 
 export default OpenModalButton;
