@@ -53,6 +53,6 @@ function ProfileButton({ user }) {
       </ul>
     </>
   );
-};
+}
 
 export default ProfileButton;
