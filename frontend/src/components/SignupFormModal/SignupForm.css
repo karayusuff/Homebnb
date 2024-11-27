@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  background-color: rgb(1, 0, 14);
 }
 
 #signup-container {
@@ -12,14 +12,16 @@
   align-items: center;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(255, 255, 255, 0.2);
   width: 100%;
   max-width: 400px;
   box-sizing: border-box;
+  color: rgb(225, 225, 225);
+  background-color: rgb(1, 0, 14);
 }
 
 #signup-title {
-  color: #000000d5;
+  color: rgb(225, 225, 225);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 25px;
 }
@@ -30,24 +32,49 @@
 
 .input {
   width: 100%;
+  height: 30px;
   padding: 10px;
   border: 1px solid;
   border-radius: 4px;
   margin-bottom: 20px;
+  margin-top: 2px;
   box-sizing: border-box;
+  background-color: rgb(225, 225, 225);
+}
+
+input::placeholder {
+  font-style: italic;
+  color: gray;
+}
+
+.input:focus {
+  outline: none;
+  border: 2px solid #c0bedd;
+  box-shadow: 0 0 5px #c0bedd;
 }
 
 .button {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #d13f3f;
+  background-color: #6b5ca8;
+  color: white;
   border: none;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 16px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .button:hover {
-  background-color: #af0b0b;
+  background-color: #8e7cc3;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  background-color: #5a4a91;
+  transform: translateY(2px);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }

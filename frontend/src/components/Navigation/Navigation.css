@@ -19,15 +19,12 @@
 }
 
 #home-link {
-  position: fixed;
-  top: 20px;
-  left: 15px;
-  /* z-index: 1000; */
+  position: relative;
+  top: 10px;
 }
 
 #home-logo {
-  width: 250px;
-  height: auto;
+  width: 225px;
 }
 
 .logout-icon {
@@ -48,13 +45,10 @@
   all: unset;
   color: white;
   font-size: 35px;
-  /* margin: 0 15px; */
-  /* padding: 10px; */
   transition: 0.1s;
-  /* z-index: 1000; */
   position: fixed;
-  top: 40px;
-  right: 25px;
+  top: 35px;
+  right: 45px;
 }
 
 .profile-icon:hover {
@@ -67,7 +61,7 @@
   top: 75px;
   right: 25px;
   background-color: rgb(1, 0, 14);
-  border: 1px solid #ddd;
+  border: 1px ridge #ddd;
   border-radius: 4px;
   padding: 10px;
   box-shadow: 0 2px 2px #c0bedd;
@@ -78,11 +72,12 @@
   padding: 8px 12px;
   font-size: 14px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  transition: 0.1s;
 }
 
 .profile-dropdown li:hover {
   cursor: pointer;
-  color: #d13f3f;
+  color: #c0bedd;
 }
 
 .hidden {
