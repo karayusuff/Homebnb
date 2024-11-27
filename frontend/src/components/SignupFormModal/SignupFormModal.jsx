@@ -49,6 +49,7 @@ function SignupFormModal() {
           <label className="label">
             Email
             <input
+              placeholder="e.g., yourname@example.com"
               className="input"
               type="text"
               value={email}
@@ -60,6 +61,7 @@ function SignupFormModal() {
           <label className="label">
             Username
             <input
+              placeholder="Choose a username"
               className="input"
               type="text"
               value={username}
@@ -71,6 +73,7 @@ function SignupFormModal() {
           <label className="label">
             First Name
             <input
+              placeholder="Enter your first name"
               className="input"
               type="text"
               value={firstName}
@@ -82,6 +85,7 @@ function SignupFormModal() {
           <label className="label">
             Last Name
             <input
+              placeholder="Enter your last name"
               className="input"
               type="text"
               value={lastName}
@@ -93,6 +97,7 @@ function SignupFormModal() {
           <label className="label">
             Password
             <input
+              placeholder="Create a password"
               className="input"
               type="password"
               value={password}
@@ -104,6 +109,7 @@ function SignupFormModal() {
           <label className="label">
             Confirm Password
             <input
+              placeholder="Confirm your password"
               className="input"
               type="password"
               value={confirmPassword}

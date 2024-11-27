@@ -15,7 +15,7 @@ function OpenModalButton({
   };
 
   return (
-    <div onClick={onClick} className='nav-icon'>
+    <div onClick={onClick}>
       {buttonText}
       </div>
   )

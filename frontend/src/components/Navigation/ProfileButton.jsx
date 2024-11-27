@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { CiUser } from "react-icons/ci";
+import { PiUserListLight } from "react-icons/pi";
 import OpenModalButton from '../OpenModalButton/OpenModalButton';
 // import OpenModalMenuItem from "./OpenModalMenuItem";
 import SignupFormModal from '../SignupFormModal/SignupFormModal';
@@ -46,13 +46,13 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={toggleMenu} className="profile-icon">
-        <CiUser title="Profile" />
+        <PiUserListLight title="Profile" />
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <li>{user.username}</li>
             <li>{user.firstName} {user.lastName}</li>
+            <li>{user.username}</li>
             <li>{user.email}</li>
             <li>
               <button onClick={logout} className="logout-icon">
