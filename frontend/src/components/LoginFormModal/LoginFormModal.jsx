@@ -53,7 +53,7 @@ function LoginFormModal() {
               required
             />
           </label>
-          {errors.credential && <p>{errors.credential}</p>}
+          <div className="error-container">{errors.credential && errors.credential}</div>
           <button 
             id='login-button' 
             type="submit"
