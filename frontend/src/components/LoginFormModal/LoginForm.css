@@ -20,6 +20,14 @@
   background-color: rgb(1, 0, 14);
 }
 
+.error-container {
+  color: red;
+  font-size: 0.8em;
+  max-height: 15px;
+  margin: -5px 0 10px;
+  text-align: left;
+}
+
 #login-title {
   color: rgb(225, 225, 225);
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
