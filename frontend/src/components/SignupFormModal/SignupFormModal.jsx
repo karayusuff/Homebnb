@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import * as sessionActions from '../../store/session';
 import { useState } from "react";
-import './SignupForm.css'
 import { useModal } from "../../context/Modal";
+import * as sessionActions from '../../store/session';
+import './SignupForm.css'
 
 
 function SignupFormModal() {
@@ -118,7 +118,7 @@ function SignupFormModal() {
             />
           </label>
           {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
-          <button className="button" type="submit">Sign Up</button>
+          <button id="signup-button" type="submit">Sign Up</button>
         </form>
       </div>
     </div>

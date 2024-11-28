@@ -43,7 +43,7 @@
   background-color: rgb(225, 225, 225);
 }
 
-input::placeholder {
+.input::placeholder {
   font-style: italic;
   color: gray;
 }
@@ -54,30 +54,56 @@ input::placeholder {
   box-shadow: 0 0 5px #c0bedd;
 }
 
-.button {
-  background-color: #6b5ca8;
+#login-button {
+  background-color: #444e57; 
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 7px 15px;
+  border-radius: 5px;
   font-size: 16px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s;
   width: auto;
   display: block;
   margin: 0 auto;
 }
 
-.button:hover {
-  background-color: #8e7cc3;
-  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+#login-button:hover {
+  cursor: pointer;
+  background-color: #5c6a75;
 }
 
-.button:active {
-  background-color: #5a4a91;
-  transform: translateY(2px);
+#login-button:active {
+  background-color: #333b42; 
+  transform: translateY(1px);
+}
+
+#demo-button {
+  background-color: #6b5ca8;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.2s;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 7px;
 }
 
+#demo-button:hover {
+  cursor: pointer;
+  background-color: #8e7cc3;
+}
 
+#demo-button:active {
+  background-color: #5a4a91;
+  transform: translateY(1px);
+}
+
+.disabled-button {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
