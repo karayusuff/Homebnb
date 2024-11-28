@@ -32,7 +32,6 @@
   color: white;
   margin: 0 15px;
   font-size: 30px;
-  padding: 10px;
   transition: 0.1s;
 }
 
@@ -66,6 +65,10 @@
   padding: 10px;
   box-shadow: 0 2px 2px #c0bedd;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-dropdown li {
@@ -73,6 +76,7 @@
   font-size: 14px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   transition: 0.1s;
+  text-align: center;
 }
 
 .profile-dropdown li:hover {
