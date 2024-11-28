@@ -45,6 +45,13 @@ module.exports = {
         email: 'olivia.williams@airbnb.com',
         username: 'sf_novice',
         hashedPassword: bcrypt.hashSync('password567')
+      },
+      {
+        firstName: 'Yusuf',
+        lastName: 'Kara',
+        email: 'yusuf.kara@airbnb.com',
+        username: 'demo-lition',
+        hashedPassword: bcrypt.hashSync('password')
       }
     ], { validate: true });
   },
@@ -58,7 +65,8 @@ module.exports = {
         'hollywood_hero', 
         'austin_explorer', 
         'luxury_in_cupertino', 
-        'sf_novice'
+        'sf_novice',
+        'demo-lition'
       ] }
     }, {});
   }
