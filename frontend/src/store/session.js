@@ -1,9 +1,7 @@
 import { csrfFetch } from './csrf';
 
-
 const SET_USER = 'session/SET_USER';
 const REMOVE_USER = 'session/REMOVE_USER';
-
 
 const setUser = (user) => {
   return {
@@ -17,7 +15,6 @@ const removeUser = () => {
     type: REMOVE_USER
   };
 };
-
 
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
