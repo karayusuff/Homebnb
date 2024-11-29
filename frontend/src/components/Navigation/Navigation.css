@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  margin-top: 20px;
 }
 
 .nav-icon {
@@ -18,10 +19,10 @@
   color: #c0bedd;
 }
 
-#home-link {
-  position: relative;
+/* #home-link {
+  position: fixed;
   top: 10px;
-}
+} */
 
 #home-logo {
   width: 225px;
@@ -45,9 +46,7 @@
   color: white;
   font-size: 35px;
   transition: 0.1s;
-  position: fixed;
-  top: 35px;
-  right: 45px;
+  margin-right: 10px;
 }
 
 .profile-icon:hover {
@@ -56,7 +55,7 @@
 }
 
 .profile-dropdown {
-  position: absolute;
+  position: fixed;
   top: 75px;
   right: 25px;
   background-color: rgb(1, 0, 14);
