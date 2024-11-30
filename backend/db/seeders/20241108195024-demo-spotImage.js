@@ -12,27 +12,27 @@ module.exports = {
     await SpotImage.bulkCreate([
       {
         spotId: 1,
-        url: 'https://www.shutterstock.com/shutterstock/photos/2505026333/display_1500/stock-photo-luxury-home-minimalistic-contemporary-realistic-australian-landscape-upscale-architecture-2505026333.jpg',
+        url: 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         preview: true
       },
       {
         spotId: 1,
-        url: 'https://www.shutterstock.com/shutterstock/photos/2462375319/display_1500/stock-photo-high-resolution-dslr-capture-of-a-large-modern-home-under-construction-with-big-window-openings-2462375319.jpg',
+        url: 'https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         preview: false
       },
       {
         spotId: 1,
-        url: 'https://www.shutterstock.com/shutterstock/photos/2462380765/display_1500/stock-photo-high-resolution-unfinished-modern-home-full-view-of-entire-structure-partially-completed-walls-2462380765.jpg',
+        url: 'https://images.pexels.com/photos/8186519/pexels-photo-8186519.jpeg',
         preview: false
       },
       {
         spotId: 1,
-        url: 'https://www.shutterstock.com/shutterstock/photos/2462381203/display_1500/stock-photo-high-resolution-unfinished-modern-contemporary-home-partially-completed-walls-using-purple-fire-2462381203.jpg',
+        url: 'https://images.pexels.com/photos/1909791/pexels-photo-1909791.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         preview: false
       },
       {
         spotId: 1,
-        url: 'https://www.shutterstock.com/shutterstock/photos/2462379717/display_1500/stock-photo-high-resolution-modern-contemporary-home-partially-constructed-walls-visible-scaffolding-use-of-2462379717.jpg',
+        url: 'https://images.pexels.com/photos/3209045/pexels-photo-3209045.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         preview: false
       }
     ], { validate: true });

@@ -27,53 +27,53 @@ function LoginFormModal() {
   };
 
   return (
-    <div id='login-page'>
-      <div id='login-container'>
-        <h1 id='login-title'>Log In</h1>
-        <form onSubmit={handleSubmit}>
-          <label className='label'>
-            Username or Email
-            <input
-              className='input'
-              placeholder='Please enter your username or email'
-              type="text"
-              value={credential}
-              onChange={(e) => setCredential(e.target.value)}
-              required
-            />
-          </label>
-          <label>
-            Password
-            <input
-              className='input'
-              placeholder='Please enter your password'
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </label>
-          <div className="error-container">{errors.credential && errors.credential}</div>
-          <button 
-            id='login-button' 
-            type="submit"
-            className={!isValid() ? 'disabled-button' : ''}
-          >
-            Log In
-          </button>
-          <button 
-            id="demo-button" 
-            type="submit" 
-            onClick={() => {
-              setCredential("demo-lition");
-              setPassword("password");
-            }}
-          >
-            Log in as demo user
-          </button>
-        </form>
-      </div>
+    // <div id='login-page'>
+    <div id='login-container'>
+      <h1 id='login-title'>Log In</h1>
+      <form onSubmit={handleSubmit}>
+        <label className='label'>
+          Username or Email
+          <input
+            className='input'
+            placeholder='Please enter your username or email'
+            type="text"
+            value={credential}
+            onChange={(e) => setCredential(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Password
+          <input
+            className='input'
+            placeholder='Please enter your password'
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </label>
+        <div className="error-container">{errors.credential && errors.credential}</div>
+        <button 
+          id='login-button' 
+          type="submit"
+          className={!isValid() ? 'disabled-button' : ''}
+        >
+          Log In
+        </button>
+        <button 
+          id="demo-button" 
+          type="submit" 
+          onClick={() => {
+            setCredential("demo-lition");
+            setPassword("password");
+          }}
+        >
+          Log in as demo user
+        </button>
+      </form>
     </div>
+    // </div>
   );
 }
 
