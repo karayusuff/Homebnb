@@ -1,21 +1,44 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './SpotDetails.css';
 
 const SpotDetails = () => {
   const { spotId } = useParams();
   const [spot, setSpot] = useState('');
+  const [reviews, setReviews] = useState([]);
+  const currentUser = useSelector((state) => state.session.user);
+
+  const isOwner = currentUser && currentUser.id === spot.ownerId;
 
   useEffect(() => {
     fetch(`/api/spots/${spotId}`)
       .then((response) => response.json())
       .then((data) => setSpot(data));
+
+    fetch(`/api/spots/${spotId}/reviews`)
+      .then((response) => response.json())
+      .then((data) => setReviews(data.Reviews || []));
   }, [spotId]);
 
   if (!spot) return <div>Loading...</div>;
 
+  const reviewCount = reviews.length;
+  const averageRating = reviewCount > 0 ? (
+    reviews.reduce((sum, review) => sum + review.stars, 0) / reviewCount
+  ) : null;
+
+  const ratingDisplay = averageRating ? averageRating.toFixed(2) : "New";
+
   const previewImage = spot.SpotImages?.find((image) => image.preview === true);
   const otherImages = spot.SpotImages?.filter((image) => image.preview !== true);
+
+  const renderStars = (stars) => {
+    let fullStars = Math.floor(stars);
+    let emptyStars = 5 - fullStars;
+    let starString = '✭'.repeat(fullStars) + '✩'.repeat(emptyStars);
+    return starString;
+  };
 
   return (
     <div className="spot-details">
@@ -47,9 +70,23 @@ const SpotDetails = () => {
           <p>{spot.description}</p>
         </div>
         <div className="callout-box">
-          <p>
-            <span className="bold-price">${spot.price}</span> / night
-          </p>
+          <div className="rating-price-container">
+            <div className="rating-details">
+              <span className="star-rating">
+                <span className="star">★</span> {ratingDisplay}
+                {reviewCount > 0 && (
+                  <>
+                    <span className="separator">·</span>
+                    <span>{reviewCount} {reviewCount > 1 ? 'Reviews' : 'Review'}</span>
+                  </>
+                )}
+              </span>
+            </div>
+            <div className="price-details">
+              <span className="bold-price">${spot.price}</span>
+              <span className="regular-text"> / night</span>
+            </div>
+          </div>
           <button
             id="reserve-button"
             onClick={() => alert('Feature coming soon')}
@@ -57,6 +94,40 @@ const SpotDetails = () => {
             Reserve
           </button>
         </div>
+      </div>
+
+      <div className="reviews-section">
+        <div className="reviews-summary">
+          <div className="rating-details">
+            <span className="star-rating">
+            <span>{reviewCount > 0 ? `${reviewCount} ${reviewCount > 1 ? 'Reviews' : 'Review'}` 
+              : "No review yet"}
+            </span>
+            <span className="separator">·</span>
+              <span className="star">★</span> {ratingDisplay}
+            </span>
+          </div>
+        </div>
+
+        {reviewCount === 0 && currentUser && !isOwner ? (
+          <p>Be the first to post a review!</p>
+        ) : (
+          reviews.map((review) => (
+            <div key={review.id} className="review">
+              <span className="review-owner">{review.User.firstName} {review.User.lastName}</span> 
+              <span className="separator">·</span>
+              <span className="review-date">
+                {new Date(review.createdAt).toLocaleString('en-US', { month: 'long', year: 'numeric' })}
+              </span>
+              <div className="review-rating">
+                <span className="review-stars">{renderStars(review.stars)}</span>
+                <span className="separator">·</span>
+                <span className="stars-text">{review.stars} Stars</span>
+              </div>
+              <p className="review-text">{review.review}</p>
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
