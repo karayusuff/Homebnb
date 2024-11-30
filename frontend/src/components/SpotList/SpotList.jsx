@@ -13,14 +13,14 @@ const SpotList = ({ spots }) => {
                 <h3 className="spot-name" title={spot.name}>{spot.name}</h3>
                 <div className="spot-rating">
                   {spot.avgRating ? (
-                    <span>☆{spot.avgRating}</span>
+                    <span>★{spot.avgRating}</span>
                   ) : (
                     <span>New</span>
                   )}
                 </div>
               </div>
               <p className="spot-location">{spot.city}, {spot.state}</p>
-              <span className="spot-price">${spot.price} / night</span>
+              <span className="spot-price"><b>${spot.price}</b> / night</span>
             </div>
           </div>
         </Link>

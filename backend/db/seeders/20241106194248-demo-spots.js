@@ -22,7 +22,7 @@ module.exports = {
         description: 'Stylish one-bedroom apartment in the heart of Silicon Valley. Perfect for tech professionals and travelers visiting the Bay Area.',
         price: 200,
         avgRating: 4.8,
-        previewImage: 'https://example.com/silicon-valley-apartment.jpg'
+        previewImage: 'https://www.shutterstock.com/shutterstock/photos/2505026333/display_1500/stock-photo-luxury-home-minimalistic-contemporary-realistic-australian-landscape-upscale-architecture-2505026333.jpg'
       },
       {
         ownerId: 2,

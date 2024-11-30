@@ -1,66 +1,90 @@
 .spot-details {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-  color: white;
-  background-color: rgb(1, 0, 14);
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  align-items: center;
+  padding: 0 20px;
 }
 
-h1 {
-  font-size: 1.5em;
+.spot-details h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.spot-details p {
+  font-size: 0.8rem;
+  color: whitesmoke;
+  margin-bottom: 20px;
 }
 
 .spot-images {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
+  width: 100%;
 }
 
 .large-image {
-  max-height: 500px;
+  flex: 3;
+  max-width: 50%;
+  aspect-ratio: 1;
   object-fit: cover;
-  flex: 1;
+  border-radius: 8px;
+}
+
+.large-image:hover {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 .small-images {
   display: flex;
+  flex-wrap: wrap;
+  flex: 2;
   gap: 10px;
-  flex-direction: column;
-  flex: 1;
 }
 
 .small-images img {
+  width: calc(50% - 10px);
+  aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 4px;
-  flex: 1;
-  width: 100%;
-  height: calc((500px - 30px) / 4);
+  border-radius: 8px;
+  transition: 0.1s;
+}
+
+.small-images img:hover {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+
 }
 
 .details-container {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
   align-items: flex-start;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .spot-info {
-  flex: 1;
+  flex: 5;
+}
+
+.spot-info p {
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 
 .callout-box {
-  flex-basis: 300px;
-  border: none;
-  border-radius: 10px;
-  background-color: #01000E;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(255, 255, 255, 0.2);
+  flex: 2;
   padding: 20px;
+  margin-top: -15px;
+  border-radius: 8px;
+  background-color: #01000E;
   text-align: center;
-  margin-top: 0;
+}
+
+.callout-box .bold-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: whitesmoke;
 }
 
 #reserve-button {
@@ -70,7 +94,7 @@ h1 {
   padding: 7px 15px;
   border-radius: 5px;
   font-size: 16px;
-  transition: all 0.2s;
+  transition: 0.1s;
   width: auto;
   display: block;
   margin: 0 auto;
@@ -79,9 +103,14 @@ h1 {
 #reserve-button:hover {
   cursor: pointer;
   background-color: #5c6a75;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 #reserve-button:active {
   background-color: #333b42; 
   transform: translateY(2px);
+}
+
+.bold-name {
+  font-weight: bold;
 }

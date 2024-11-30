@@ -12,28 +12,28 @@ module.exports = {
     await SpotImage.bulkCreate([
       {
         spotId: 1,
-        url: 'https://example.com/images/spot1-image1.jpg',
+        url: 'https://www.shutterstock.com/shutterstock/photos/2505026333/display_1500/stock-photo-luxury-home-minimalistic-contemporary-realistic-australian-landscape-upscale-architecture-2505026333.jpg',
         preview: true
       },
       {
-        spotId: 2,
-        url: 'https://example.com/images/spot2-image1.jpg',
-        preview: true
+        spotId: 1,
+        url: 'https://www.shutterstock.com/shutterstock/photos/2462375319/display_1500/stock-photo-high-resolution-dslr-capture-of-a-large-modern-home-under-construction-with-big-window-openings-2462375319.jpg',
+        preview: false
       },
       {
-        spotId: 3,
-        url: 'https://example.com/images/spot3-image1.jpg',
-        preview: true
+        spotId: 1,
+        url: 'https://www.shutterstock.com/shutterstock/photos/2462380765/display_1500/stock-photo-high-resolution-unfinished-modern-home-full-view-of-entire-structure-partially-completed-walls-2462380765.jpg',
+        preview: false
       },
       {
-        spotId: 4,
-        url: 'https://example.com/images/spot4-image1.jpg',
-        preview: true
+        spotId: 1,
+        url: 'https://www.shutterstock.com/shutterstock/photos/2462381203/display_1500/stock-photo-high-resolution-unfinished-modern-contemporary-home-partially-completed-walls-using-purple-fire-2462381203.jpg',
+        preview: false
       },
       {
-        spotId: 5,
-        url: 'https://example.com/images/spot5-image1.jpg',
-        preview: true
+        spotId: 1,
+        url: 'https://www.shutterstock.com/shutterstock/photos/2462379717/display_1500/stock-photo-high-resolution-modern-contemporary-home-partially-constructed-walls-visible-scaffolding-use-of-2462379717.jpg',
+        preview: false
       }
     ], { validate: true });
   },
