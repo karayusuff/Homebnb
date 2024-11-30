@@ -22,7 +22,7 @@ module.exports = {
         description: 'Stylish one-bedroom apartment in the heart of Silicon Valley. Perfect for tech professionals and travelers visiting the Bay Area.',
         price: 200,
         avgRating: 4.8,
-        previewImage: 'https://example.com/silicon-valley-apartment.jpg'
+        previewImage: 'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
         ownerId: 2,
@@ -36,7 +36,7 @@ module.exports = {
         description: 'Cozy loft in the vibrant heart of Hollywood. Walking distance to famous landmarks like the Walk of Fame and the Hollywood Sign.',
         price: 150,
         avgRating: 4.7,
-        previewImage: 'https://example.com/hollywood-loft.jpg'
+        previewImage: 'https://images.pexels.com/photos/2988860/pexels-photo-2988860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
         ownerId: 3,
@@ -50,7 +50,7 @@ module.exports = {
         description: 'Bright, airy loft located in downtown Austin, ideal for exploring the city’s lively cultural scene, including live music, restaurants, and festivals.',
         price: 180,
         avgRating: 4.6,
-        previewImage: 'https://example.com/austin-loft.jpg'
+        previewImage: 'https://images.pexels.com/photos/3209035/pexels-photo-3209035.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
         ownerId: 4,
@@ -64,7 +64,7 @@ module.exports = {
         description: 'A stunning, modern house in Cupertino, perfect for families or business travelers. Close to Apple Park and other tech hubs.',
         price: 250,
         avgRating: 4.9,
-        previewImage: 'https://example.com/cupertino-retreat.jpg'
+        previewImage: 'https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       },
       {
         ownerId: 5,
@@ -78,7 +78,7 @@ module.exports = {
         description: 'Bright and inviting apartment in a prime San Francisco location, just a short ride from Fisherman’s Wharf, Golden Gate Park, and more.',
         price: 123,
         avgRating: 4.5,
-        previewImage: 'https://example.com/sf-apartment.jpg'
+        previewImage: 'https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
       }
     ], { validate: true });
   },

@@ -3,10 +3,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  margin-top: 20px;
 }
 
 .nav-icon {
-  color: white;
+  color: whitesmoke;
   font-size: 35px;
   margin: 0 15px;
   padding: 10px;
@@ -18,10 +19,10 @@
   color: #c0bedd;
 }
 
-#home-link {
-  position: relative;
+/* #home-link {
+  position: fixed;
   top: 10px;
-}
+} */
 
 #home-logo {
   width: 225px;
@@ -29,7 +30,7 @@
 
 .logout-icon {
   all: unset;
-  color: white;
+  color: whitesmoke;
   margin: 0 15px;
   font-size: 30px;
   transition: 0.1s;
@@ -42,12 +43,10 @@
 
 .profile-icon {
   all: unset;
-  color: white;
+  color: whitesmoke;
   font-size: 35px;
   transition: 0.1s;
-  position: fixed;
-  top: 35px;
-  right: 45px;
+  margin-right: 15px;
 }
 
 .profile-icon:hover {
@@ -56,7 +55,7 @@
 }
 
 .profile-dropdown {
-  position: absolute;
+  position: fixed;
   top: 75px;
   right: 25px;
   background-color: rgb(1, 0, 14);
@@ -74,7 +73,6 @@
 .profile-dropdown li {
   padding: 8px 12px;
   font-size: 14px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   transition: 0.1s;
   text-align: center;
 }

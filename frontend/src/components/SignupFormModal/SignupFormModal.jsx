@@ -51,7 +51,7 @@ function SignupFormModal() {
   };
 
   return (
-    <div id='signup-page'>
+    // <div id='signup-page'>
       <div id='signup-container'>
         <h1 id='signup-title'>Sign Up</h1>
         <form onSubmit={handleSubmit}>
@@ -137,7 +137,7 @@ function SignupFormModal() {
           </button>
         </form>
       </div>
-    </div>
+    // </div>
   );
 }
 
