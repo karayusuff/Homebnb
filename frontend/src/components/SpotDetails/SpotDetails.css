@@ -52,7 +52,6 @@
 
 .small-images img:hover {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-
 }
 
 .details-container {
@@ -70,48 +69,84 @@
 
 .spot-info p {
   margin-bottom: 10px;
-  line-height: 1.5;
+  line-height: 2;
 }
 
 .callout-box {
   flex: 2;
   padding: 20px;
-  margin-top: -15px;
+  margin-top: 5px;
   border-radius: 8px;
   background-color: #01000E;
   text-align: center;
 }
 
-.callout-box .bold-price {
-  font-size: 1.5rem;
-  font-weight: bold;
+.rating-price-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-details {
+  display: flex;
+  align-items: center;
+  gap: 5px;
   color: whitesmoke;
+  font-size: 1rem;
+}
+
+.price-details {
+  font-size: 1.2rem;
+  color: whitesmoke;
+  text-align: right;
+}
+
+.bold-price {
+  font-weight: bolder;
+}
+
+.regular-text {
+  font-weight: lighter;
+  color: antiquewhite;
+  font-size: 17px;
+}
+
+.star {
+  color: tomato;
 }
 
 #reserve-button {
-  background-color: #444e57; 
-  color: whitesmoke;
+  background-color: antiquewhite;
+  color: #01000E;
   border: none;
-  padding: 7px 15px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 50px;
   font-size: 16px;
   transition: 0.1s;
-  width: auto;
+  margin-top: 15px;
   display: block;
-  margin: 0 auto;
+  width: 100%;
 }
 
 #reserve-button:hover {
   cursor: pointer;
-  background-color: #5c6a75;
+  background-color: #d8c9a3;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 #reserve-button:active {
-  background-color: #333b42; 
+  background-color: #c6b69e;
   transform: translateY(2px);
 }
 
 .bold-name {
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 16px;
+  color: antiquewhite;
+}
+
+.separator {
+  margin-right: 10px;
+  margin-left: 10px;
 }

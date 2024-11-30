@@ -47,15 +47,25 @@ const SpotDetails = () => {
           <p>{spot.description}</p>
         </div>
         <div className="callout-box">
-          <p>
-            <span className="bold-price">${spot.price}</span> / night
-          </p>
-          <button
-            id="reserve-button"
-            onClick={() => alert('Feature coming soon')}
-          >
-            Reserve
-          </button>
+          <div className="rating-price-container">
+            <div className="rating-details">
+              <span className="star-rating">
+                <span className="star">★</span> {spot.avgStarRating ? spot.avgStarRating : 'New'}
+              </span>
+              <span className="separator">·</span>
+              <span>{spot.numReviews} {spot.numReviews > 1 ? 'Reviews' : 'Review'}</span>
+            </div>
+              <div className="price-details">
+                <span className="bold-price">${spot.price}</span>
+                <span className="regular-text"> / night</span>
+              </div>
+            </div>
+            <button
+              id="reserve-button"
+              onClick={() => alert('Feature coming soon')}
+            >
+              Reserve
+            </button>
         </div>
       </div>
     </div>
