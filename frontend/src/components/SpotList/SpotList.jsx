@@ -7,7 +7,7 @@ const SpotList = ({ spots }) => {
       {spots.map((spot) => (
         <Link to={`/spots/${spot.id}`} className="spot-tile" key={spot.id}>
           <div className="spot-tile-content">
-            <img src={spot.previewImage} alt={spot.name} className="spot-image" />
+            <img src={spot.previewImage} alt={spot.name} className="preview-image" />
             <div className="spot-info">
               <div className="spot-header">
                 <h3 className="spot-name" title={spot.name}>{spot.name}</h3>
@@ -20,7 +20,7 @@ const SpotList = ({ spots }) => {
                 </div>
               </div>
               <p className="spot-location">{spot.city}, {spot.state}</p>
-              <span className="spot-price">${spot.price} night</span>
+              <span className="spot-price">${spot.price} / night</span>
             </div>
           </div>
         </Link>

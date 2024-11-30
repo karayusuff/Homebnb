@@ -1,0 +1,87 @@
+.spot-details {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  color: white;
+  background-color: rgb(1, 0, 14);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+.spot-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.large-image {
+  max-height: 500px;
+  object-fit: cover;
+  flex: 1;
+}
+
+.small-images {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  flex: 1;
+}
+
+.small-images img {
+  object-fit: cover;
+  border-radius: 4px;
+  flex: 1;
+  width: 100%;
+  height: calc((500px - 30px) / 4);
+}
+
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.spot-info {
+  flex: 1;
+}
+
+.callout-box {
+  flex-basis: 300px;
+  border: none;
+  border-radius: 10px;
+  background-color: #01000E;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  text-align: center;
+  margin-top: 0;
+}
+
+#reserve-button {
+  background-color: #444e57; 
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.2s;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#reserve-button:hover {
+  cursor: pointer;
+  background-color: #5c6a75;
+}
+
+#reserve-button:active {
+  background-color: #333b42; 
+  transform: translateY(2px);
+}
