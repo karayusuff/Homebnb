@@ -150,3 +150,28 @@
   margin-right: 10px;
   margin-left: 10px;
 }
+
+.star {
+  font-size: 18px;
+}
+
+.stars-text {
+  font-size: 15px;
+}
+
+.review-owner {
+  color: antiquewhite;
+  font-weight: bond;
+}
+
+.review-rating {
+  opacity: 0.6;
+}
+
+.review-date {
+  opacity: 0.6;
+}
+
+.reviews-section {
+  display: block;
+}
