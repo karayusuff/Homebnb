@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './SpotDetails.css';
 
 const SpotDetails = () => {
   const { spotId } = useParams();
   const [spot, setSpot] = useState('');
   const [reviews, setReviews] = useState([]);
+  const currentUser = useSelector((state) => state.session.user);
+
+  const isOwner = currentUser && currentUser.id === spot.ownerId;
 
   useEffect(() => {
     fetch(`/api/spots/${spotId}`)
@@ -70,9 +74,13 @@ const SpotDetails = () => {
             <div className="rating-details">
               <span className="star-rating">
                 <span className="star">★</span> {ratingDisplay}
+                {reviewCount > 0 && (
+                  <>
+                    <span className="separator">·</span>
+                    <span>{reviewCount} {reviewCount > 1 ? 'Reviews' : 'Review'}</span>
+                  </>
+                )}
               </span>
-              <span className="separator">·</span>
-              <span>{reviewCount} {reviewCount > 1 ? 'Reviews' : 'Review'}</span>
             </div>
             <div className="price-details">
               <span className="bold-price">${spot.price}</span>
@@ -92,27 +100,31 @@ const SpotDetails = () => {
         <div className="reviews-summary">
           <div className="rating-details">
             <span className="star-rating">
-              <span className="star">★</span> {ratingDisplay}
+            <span>{reviewCount > 0 ? `${reviewCount} ${reviewCount > 1 ? 'Reviews' : 'Review'}` 
+              : "No review yet"}
             </span>
             <span className="separator">·</span>
-            <span>{reviewCount} {reviewCount > 1 ? 'Reviews' : 'Review'}</span>
+              <span className="star">★</span> {ratingDisplay}
+            </span>
           </div>
         </div>
 
-        {reviewCount === 0 ? (
+        {reviewCount === 0 && currentUser && !isOwner ? (
           <p>Be the first to post a review!</p>
         ) : (
           reviews.map((review) => (
             <div key={review.id} className="review">
               <span className="review-owner">{review.User.firstName} {review.User.lastName}</span> 
               <span className="separator">·</span>
-              <span className="review-date">({new Date(review.createdAt).toLocaleDateString()})</span>
+              <span className="review-date">
+                {new Date(review.createdAt).toLocaleString('en-US', { month: 'long', year: 'numeric' })}
+              </span>
               <div className="review-rating">
-                <span>{renderStars(review.stars)}</span>
+                <span className="review-stars">{renderStars(review.stars)}</span>
                 <span className="separator">·</span>
                 <span className="stars-text">{review.stars} Stars</span>
               </div>
-              <p>{review.review}</p>
+              <p className="review-text">{review.review}</p>
             </div>
           ))
         )}
