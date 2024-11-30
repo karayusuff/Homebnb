@@ -12,7 +12,6 @@
   overflow: hidden;
   transition: transform 0.3s;
   background-color: #01000E;
-  margin-top: 20px;
 }
 
 .spot-tile:hover {
