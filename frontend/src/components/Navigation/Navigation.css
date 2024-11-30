@@ -7,7 +7,7 @@
 }
 
 .nav-icon {
-  color: white;
+  color: whitesmoke;
   font-size: 35px;
   margin: 0 15px;
   padding: 10px;
@@ -30,7 +30,7 @@
 
 .logout-icon {
   all: unset;
-  color: white;
+  color: whitesmoke;
   margin: 0 15px;
   font-size: 30px;
   transition: 0.1s;
@@ -43,7 +43,7 @@
 
 .profile-icon {
   all: unset;
-  color: white;
+  color: whitesmoke;
   font-size: 35px;
   transition: 0.1s;
   margin-right: 15px;

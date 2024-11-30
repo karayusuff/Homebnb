@@ -6,12 +6,12 @@
 }
 
 .spot-details h1 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin-bottom: 5px;
 }
 
 .spot-details p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   color: whitesmoke;
   margin-bottom: 20px;
 }
@@ -89,7 +89,7 @@
 
 #reserve-button {
   background-color: #444e57; 
-  color: white;
+  color: whitesmoke;
   border: none;
   padding: 7px 15px;
   border-radius: 5px;
