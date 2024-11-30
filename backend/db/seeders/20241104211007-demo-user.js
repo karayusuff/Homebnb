@@ -14,44 +14,44 @@ module.exports = {
       {
         firstName: 'Sarah',
         lastName: 'Smith',
-        email: 'sarah.smith@airbnb.com',
+        email: 'sarah.smith@homebnb.com',
         username: 'techmama',
         hashedPassword: bcrypt.hashSync('password123')
       },
       {
         firstName: 'John',
         lastName: 'Doe',
-        email: 'john.doe@airbnb.com',
+        email: 'john.doe@homebnb.com',
         username: 'hollywood_hero',
         hashedPassword: bcrypt.hashSync('password234')
       },
       {
         firstName: 'Emily',
         lastName: 'Johnson',
-        email: 'emily.johnson@airbnb.com',
+        email: 'emily.johnson@homebnb.com',
         username: 'austin_explorer',
         hashedPassword: bcrypt.hashSync('password345')
       },
       {
         firstName: 'Michael',
         lastName: 'Brown',
-        email: 'michael.brown@airbnb.com',
+        email: 'michael.brown@homebnb.com',
         username: 'luxury_in_cupertino',
         hashedPassword: bcrypt.hashSync('password456')
       },
       {
         firstName: 'Olivia',
         lastName: 'Williams',
-        email: 'olivia.williams@airbnb.com',
+        email: 'olivia.williams@homebnb.com',
         username: 'sf_novice',
         hashedPassword: bcrypt.hashSync('password567')
       },
       {
         firstName: 'Yusuf',
         lastName: 'Kara',
-        email: 'yusuf.kara@airbnb.com',
-        username: 'demo-lition',
-        hashedPassword: bcrypt.hashSync('password')
+        email: 'yusuf.kara@homebnb.com',
+        username: 'yusufkara',
+        hashedPassword: bcrypt.hashSync('adminpassword')
       }
     ], { validate: true });
   },

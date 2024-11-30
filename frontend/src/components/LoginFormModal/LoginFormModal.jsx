@@ -65,8 +65,8 @@ function LoginFormModal() {
           id="demo-button" 
           type="submit" 
           onClick={() => {
-            setCredential("demo-lition");
-            setPassword("password");
+            setCredential("yusufkara");
+            setPassword("adminpassword");
           }}
         >
           Log in as demo user
