@@ -51,7 +51,6 @@ function SignupFormModal() {
   };
 
   return (
-    // <div id='signup-page'>
       <div id='signup-container'>
         <h1 id='signup-title'>Sign Up</h1>
         <form onSubmit={handleSubmit}>
@@ -66,7 +65,6 @@ function SignupFormModal() {
               required
             />
           </label>
-          {/* {errors.email && <p>{errors.email}</p>} */}
           <div className="error-container">{errors.email && errors.email}</div>
           <label className="label">
             Username
@@ -131,13 +129,12 @@ function SignupFormModal() {
           <button 
             id="signup-button" 
             type="submit"
-            className={!isValid() ? 'disabled-button' : ''}
+            disabled={!isValid()}
           >
             Sign Up
           </button>
         </form>
       </div>
-    // </div>
   );
 }
 
