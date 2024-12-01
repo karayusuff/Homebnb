@@ -20,7 +20,7 @@ const PostReviewModal = ({ spotId }) => {
     const reviewData = { review: reviewText, stars };
 
     try {
-      await dispatch(postReview(spotId, reviewData));
+      dispatch(postReview(spotId, reviewData));
       closeModal();
       window.location.reload();
     } catch (err) {
