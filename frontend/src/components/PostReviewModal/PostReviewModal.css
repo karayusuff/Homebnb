@@ -1,0 +1,59 @@
+.post-review-modal {
+  padding: 30px;
+  text-align: center;
+  background-color: #01000E;
+  color: white;
+  border-radius: 10px;
+  min-width: 50vw;
+  margin: -100px auto;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.post-review-modal h2 {
+  color: antiquewhite;
+}
+
+textarea {
+  padding: 10px;
+  width: 100%;
+  height: 80px;
+  border: 1px solid #444e57;
+  border-radius: 5px;
+  background-color: #1a1925;
+  color: whitesmoke;
+  resize: none;
+}
+
+#review-button {
+  background-color: #444e57;
+  color: whitesmoke;
+  padding: 7px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+#review-button:hover {
+  cursor: pointer;
+  background-color: #5c6a75;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+#review-button:active {
+  background-color: #333b42; 
+  transform: translateY(1px);
+}
+
+#review-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.error-message {
+  color: red;
+  margin-top: -10px;
+  font-size: 14px;
+}
