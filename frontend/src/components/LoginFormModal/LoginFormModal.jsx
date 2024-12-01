@@ -27,7 +27,6 @@ function LoginFormModal() {
   };
 
   return (
-    // <div id='login-page'>
     <div id='login-container'>
       <h1 id='login-title'>Log In</h1>
       <form onSubmit={handleSubmit}>
@@ -57,7 +56,7 @@ function LoginFormModal() {
         <button 
           id='login-button' 
           type="submit"
-          className={!isValid() ? 'disabled-button' : ''}
+          disabled={!isValid()}
         >
           Log In
         </button>
@@ -73,7 +72,6 @@ function LoginFormModal() {
         </button>
       </form>
     </div>
-    // </div>
   );
 }
 

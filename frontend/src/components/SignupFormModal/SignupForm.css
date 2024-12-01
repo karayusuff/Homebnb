@@ -79,7 +79,7 @@
   transform: translateY(1px);
 }
 
-.disabled-button {
+#signup-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;

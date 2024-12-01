@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import OpenModalButton from '../OpenModalButton/OpenModalButton';
+import PostReviewModal from '../PostReviewModal/PostReviewModal';
 import './SpotDetails.css';
 
 const SpotDetails = () => {
@@ -18,7 +20,12 @@ const SpotDetails = () => {
 
     fetch(`/api/spots/${spotId}/reviews`)
       .then((response) => response.json())
-      .then((data) => setReviews(data.Reviews || []));
+      .then((data) => {
+        const sortedReviews = (data.Reviews || []).sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+        setReviews(sortedReviews);
+      });
   }, [spotId]);
 
   if (!spot) return <div>Loading...</div>;
@@ -95,7 +102,6 @@ const SpotDetails = () => {
           </button>
         </div>
       </div>
-
       <div className="reviews-section">
         <div className="reviews-summary">
           <div className="rating-details">
@@ -108,6 +114,12 @@ const SpotDetails = () => {
             </span>
           </div>
         </div>
+              {currentUser && !isOwner && !reviews.some((review) => review.userId === currentUser.id) && (
+                <OpenModalButton
+                  buttonText="Post Your Review"
+                  modalComponent={<PostReviewModal spotId={spotId} />}
+                />
+              )}
 
         {reviewCount === 0 && currentUser && !isOwner ? (
           <p>Be the first to post a review!</p>
