@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import OpenModalButton from '../OpenModalButton/OpenModalButton';
-import PostReviewModal from '../PostReviewModal/PostReviewModal';
+import PostReviewModal from '../ReviewModals/PostReviewModal';
+import ConfirmDeleteModal from '../ReviewModals/ConfirmDeleteModal';
+import { deleteReview } from '../../store/reviews';
 import './SpotDetails.css';
 
 const SpotDetails = () => {
+  const dispatch = useDispatch();
   const { spotId } = useParams();
   const [spot, setSpot] = useState('');
   const [reviews, setReviews] = useState([]);
@@ -28,6 +31,11 @@ const SpotDetails = () => {
       });
   }, [spotId]);
 
+  const handleDeleteReview = async (reviewId) => {
+    dispatch(deleteReview(reviewId));
+    setReviews((prevReviews) => prevReviews.filter((review) => review.id !== reviewId));
+  };
+
   if (!spot) return <div>Loading...</div>;
 
   const reviewCount = reviews.length;
@@ -41,7 +49,7 @@ const SpotDetails = () => {
   const otherImages = spot.SpotImages?.filter((image) => image.preview !== true);
 
   const renderStars = (stars) => {
-    let fullStars = Math.floor(stars);
+    let fullStars = stars;
     let emptyStars = 5 - fullStars;
     let starString = '✭'.repeat(fullStars) + '✩'.repeat(emptyStars);
     return starString;
@@ -114,13 +122,12 @@ const SpotDetails = () => {
             </span>
           </div>
         </div>
-              {currentUser && !isOwner && !reviews.some((review) => review.userId === currentUser.id) && (
-                <OpenModalButton
-                  buttonText="Post Your Review"
-                  modalComponent={<PostReviewModal spotId={spotId} />}
-                />
-              )}
-
+        {currentUser && !isOwner && !reviews.some((review) => review.userId === currentUser.id) && (
+          <OpenModalButton
+            buttonText="Post Your Review"
+            modalComponent={<PostReviewModal spotId={spotId} />}
+          />
+        )}
         {reviewCount === 0 && currentUser && !isOwner ? (
           <p>Be the first to post a review!</p>
         ) : (
@@ -137,6 +144,17 @@ const SpotDetails = () => {
                 <span className="stars-text">{review.stars} Stars</span>
               </div>
               <p className="review-text">{review.review}</p>
+              {currentUser && currentUser.id === review.userId && (
+                <OpenModalButton
+                  buttonText="Delete"
+                  modalComponent={
+                    <ConfirmDeleteModal
+                      reviewId={review.id}
+                      onDelete={handleDeleteReview}
+                    />
+                  }
+                />
+              )}
             </div>
           ))
         )}
