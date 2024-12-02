@@ -92,7 +92,7 @@ const SpotForm = ({ formType }) => {
       }
     }
   };
-
+  
   return (
     <div className="spot-form-container">
       <h2>{formType === 'update' ? 'Update your Spot' : 'Create a New Spot'}</h2>

@@ -2,10 +2,13 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchSpots } from '../../store/spots';
+import { useModal } from '../../context/Modal';
+import ConfirmDeleteSpotModal from '../SpotModals/ConfirmDeleteSpotModal';
 import './ManageSpots.css';
 
 const ManageSpots = () => {
   const dispatch = useDispatch();
+  const { setModalContent } = useModal();
   const user = useSelector((state) => state.session.user);
   const spots = useSelector((state) => state.spots.spots);
   const userSpots = spots.filter((spot) => spot.ownerId === user.id);
@@ -19,6 +22,9 @@ const ManageSpots = () => {
     return <span className="spot-rating">★ {avgRating.toFixed(2)}</span>;
   };
 
+  const handleDeleteClick = (spotId) => {
+    setModalContent(<ConfirmDeleteSpotModal spotId={spotId} />);
+  };
 
   return (
     <div className="manage-spots-container">
@@ -47,7 +53,10 @@ const ManageSpots = () => {
                 <Link to={`/spots/${spot.id}/edit`} className="update-button">
                   Update
                 </Link>
-                <button className="delete-button">
+                <button
+                  className="delete-button"
+                  onClick={() => handleDeleteClick(spot.id)}
+                >
                   Delete
                 </button>
               </div>
