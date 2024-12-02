@@ -1,0 +1,62 @@
+.create-spot-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #01000E;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(255, 255, 255, 0.2);
+}
+
+.create-spot-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.create-spot-form label {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.create-spot-form input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #444e57;
+  /* background-color: whitesmoke; */
+  color: white;
+}
+
+.create-spot-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #444e57;
+  /* background-color: whitesmoke; */
+  color: white;
+}
+
+.create-spot-form button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #444e57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.create-spot-form button:hover {
+  background-color: #5c6a75;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
