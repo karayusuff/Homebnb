@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { PiUserListLight } from "react-icons/pi";
+import { useNavigate, Link } from 'react-router-dom';
 import OpenModalButton from '../OpenModalButton/OpenModalButton';
-// import OpenModalMenuItem from "./OpenModalMenuItem";
 import SignupFormModal from '../SignupFormModal/SignupFormModal';
 import LoginFormModal from '../LoginFormModal/LoginFormModal';
 import LogoutButton from "./LogoutButton";
 import * as sessionActions from '../../store/session';
-// import './Navigation.css';
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
   const ulRef = useRef();
 
@@ -35,10 +35,11 @@ function ProfileButton({ user }) {
 
   const closeMenu = () => setShowMenu(false);
 
-  const logout = (e) => {
+  const logout = async (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout());
+    await dispatch(sessionActions.logout());
     closeMenu();
+    navigate('/');
   };
 
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
@@ -53,6 +54,11 @@ function ProfileButton({ user }) {
           <>
             <li>Hello, {user.firstName}!</li>
             <li>{user.email}</li>
+            <li>
+              <Link to="/spots/manage" onClick={closeMenu}>
+                Manage Spots
+              </Link>
+            </li>
             <li>
               <button onClick={logout} className="logout-icon">
                 <LogoutButton />
@@ -83,3 +89,4 @@ function ProfileButton({ user }) {
 }
 
 export default ProfileButton;
+
