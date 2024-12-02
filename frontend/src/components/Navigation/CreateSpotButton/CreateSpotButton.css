@@ -1,0 +1,17 @@
+.create-spot-button {
+  padding: 8px 16px;
+  background-color: #444e57;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.create-spot-button:hover {
+  background-color: #5c6a75;
+}
+
+.create-spot-button:active {
+  background-color: #333b42;
+}

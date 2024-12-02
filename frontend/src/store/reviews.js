@@ -13,7 +13,6 @@ const removeReview = (reviewId) => ({
   reviewId
 });
 
-
 export const postReview = (spotId, reviewData) => async (dispatch) => {
   const response = await csrfFetch(`/api/spots/${spotId}/reviews`, {
     method: 'POST',

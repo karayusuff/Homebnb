@@ -25,6 +25,8 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  background-color: #01000E;
+  /* border: none; */
 }
 
 .preview-image {
