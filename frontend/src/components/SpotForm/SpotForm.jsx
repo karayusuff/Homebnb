@@ -1,13 +1,19 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { createSpotThunk } from '../../../store/spots';
-import { validateForm } from '../../../utils/validation';
-import './CreateSpotForm.css';
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { createSpotThunk, updateSpotThunk } from '../../store/spots';
+import { validateForm } from '../../utils/validation';
+import './SpotForm.css';
 
-const CreateSpotForm = () => {
+const SpotForm = ({ formType }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { spotId } = useParams();
+
+  const spots = useSelector((state) => state.spots.spots);
+  const currentSpot = formType === 'update' 
+    ? spots.find((spot) => spot.id === parseInt(spotId)) 
+    : null;
 
   const [formData, setFormData] = useState({
     country: '',
@@ -24,6 +30,24 @@ const CreateSpotForm = () => {
   });
 
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    if (formType === 'update' && currentSpot) {
+      setFormData({
+        country: currentSpot.country || '',
+        address: currentSpot.address || '',
+        city: currentSpot.city || '',
+        state: currentSpot.state || '',
+        lat: currentSpot.lat || '',
+        lng: currentSpot.lng || '',
+        description: currentSpot.description || '',
+        name: currentSpot.name || '',
+        price: currentSpot.price || '',
+        previewImage: currentSpot.previewImage || '',
+        images: ['', '', '', ''],
+      });
+    }
+  }, [formType, currentSpot]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,20 +76,28 @@ const CreateSpotForm = () => {
       images: formData.images.filter((url) => url),
     };
 
-    const result = await dispatch(createSpotThunk(updatedFormData));
-
-    if (result.errors) {
-      setErrors(result.errors);
+    if (formType === 'update') {
+      const result = await dispatch(updateSpotThunk(spotId, updatedFormData));
+      if (result.errors) {
+        setErrors(result.errors);
+      } else {
+        navigate(`/spots/${result.id}`);
+      }
     } else {
-      navigate(`/spots/${result.id}`);
+      const result = await dispatch(createSpotThunk(updatedFormData));
+      if (result.errors) {
+        setErrors(result.errors);
+      } else {
+        navigate(`/spots/${result.id}`);
+      }
     }
   };
-
+  
   return (
-    <div className="create-spot-form-container">
-      <h2>Create a New Spot</h2>
+    <div className="spot-form-container">
+      <h2>{formType === 'update' ? 'Update your Spot' : 'Create a New Spot'}</h2>
       {errors.general && <p className="error">{errors.general}</p>}
-      <form className="create-spot-form" onSubmit={handleSubmit}>
+      <form className="spot-form" onSubmit={handleSubmit}>
         <section>
           <h3>Where&apos;s your place located?</h3>
           <p>Guests will only get your exact address once they booked a reservation.</p>
@@ -134,7 +166,7 @@ const CreateSpotForm = () => {
         </section>
         <section>
           <h3>Describe your place to guests</h3>
-          <p>Mention the best features of your space, any special amentities like fast wifi or parking, and what you love about the neighborhood.</p>
+          <p>Mention the best features of your space, any special amenities like fast wifi or parking, and what you love about the neighborhood.</p>
           <textarea
             name="description"
             value={formData.description}
@@ -190,11 +222,11 @@ const CreateSpotForm = () => {
             </div>
           ))}
         </section>
-
-        <button type="submit">Create Spot</button>
+        <button type="submit">{formType === 'update' ? 'Update your Spot' : 'Create Spot'}</button>
       </form>
     </div>
   );
 };
 
-export default CreateSpotForm;
+export default SpotForm;
+
