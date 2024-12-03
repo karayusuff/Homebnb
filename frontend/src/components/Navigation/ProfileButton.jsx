@@ -46,14 +46,14 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={toggleMenu} className="profile-icon">
+      <button onClick={toggleMenu} id="profile-icon">
         <PiUserListLight title="Profile" />
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <li>Hello, {user.firstName}!</li>
-            <li>{user.email}</li>
+            <li className="user-info">Hello, {user.firstName}!</li>
+            <li className="user-info">{user.email}</li>
             <li>
               <Link to="/spots/manage" onClick={closeMenu}>
                 Manage Spots
