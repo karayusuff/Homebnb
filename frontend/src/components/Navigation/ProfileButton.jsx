@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { PiUserListLight } from "react-icons/pi";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import OpenModalButton from '../OpenModalButton/OpenModalButton';
 import SignupFormModal from '../SignupFormModal/SignupFormModal';
 import LoginFormModal from '../LoginFormModal/LoginFormModal';
-import LogoutButton from "./LogoutButton";
 import * as sessionActions from '../../store/session';
 
 function ProfileButton({ user }) {
@@ -42,10 +41,15 @@ function ProfileButton({ user }) {
     navigate('/');
   };
 
+  const navigateToManageSpots = () => {
+    navigate('/spots/manage');
+    setShowMenu(false);
+  };
+
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
 
   return (
-    <>
+    <div id="profile-container">
       <button onClick={toggleMenu} id="profile-icon">
         <PiUserListLight title="Profile" />
       </button>
@@ -54,27 +58,26 @@ function ProfileButton({ user }) {
           <>
             <li className="user-info">Hello, {user.firstName}!</li>
             <li className="user-info">{user.email}</li>
-            <li>
-              <Link to="/spots/manage" onClick={closeMenu}>
+            <li className="menu-divider"></li>
+            <li className="menu-item" onClick={navigateToManageSpots}>
                 Manage Spots
-              </Link>
             </li>
-            <li>
-              <button onClick={logout} className="logout-icon">
-                <LogoutButton />
-              </button>
+            <li className="menu-divider"></li>
+            <li onClick={logout} className="menu-item">
+                Log out
             </li>
           </>
         ) : (
           <>
-            <li>
+            <li className="menu-item">
               <OpenModalButton
                 buttonText="Log In"
                 onButtonClick={closeMenu}
                 modalComponent={<LoginFormModal />}
               />
             </li>
-            <li>
+            <li className="menu-divider"></li>
+            <li className="menu-item">
               <OpenModalButton
                 buttonText="Sign Up"
                 onButtonClick={closeMenu}
@@ -84,7 +87,7 @@ function ProfileButton({ user }) {
           </>
         )}
       </ul>
-    </>
+    </div>
   );
 }
 

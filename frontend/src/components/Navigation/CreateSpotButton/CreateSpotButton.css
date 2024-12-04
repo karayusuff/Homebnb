@@ -1,9 +1,9 @@
 #create-spot-button {
   text-decoration: none;
   color: #F0F1F2;
-  margin-right: 15px;
   transition: 0.1s;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 #create-spot-button:hover {

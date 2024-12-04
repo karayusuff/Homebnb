@@ -13,16 +13,19 @@
 
 #home-logo {
   width: 225px;
-  margin-left: 10px;
 }
 
 #nav-actions {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   max-height: 50px;
-  margin-right: 25px;
-  width: 200px;
+  margin-right: 14px;
+  gap: 15px;
+}
+
+#profile-container {
+  position: relative;
 }
 
 #profile-icon {
@@ -32,7 +35,6 @@
   transition: 0.1s;
   margin-top: 8px;
   cursor: pointer;
-  /* position: relative; */
 }
 
 #profile-icon:hover {
@@ -45,29 +47,29 @@
 
 .profile-dropdown {
   position: absolute;
-  top: 8%;
-  right: 3%;
-  background-color: #01000E;
-  /* border: 1px ridge #f0f1f2; */
+  top: 100%;
+  right: 0;
+  background-color: #01000ede;
+  backdrop-filter: blur(5px);
   border-radius: 10px;
-  padding: 10px;
-  /* box-shadow: 0 2px 2px #f0f1f2; */
-  box-shadow: 0 0 5px #f0f1f2;
+  padding: 20px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1000;
+  width: 180px;
+  /* height: 180px; */
 }
 
 .profile-dropdown li {
-  padding: 8px 12px;
-  font-size: 14px;
-  transition: 0.1s;
-  /* text-align: center; */
-  cursor: pointer;
+  font-size: 0.9em;
   color: #f0f1f2;
+  margin: 10px 0;
+  width: 100%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: 8px;
 }
 
 .profile-dropdown li:hover {
@@ -78,28 +80,40 @@
   color: #C4C6C8;
 }
 
-.user-info {
+.profile-dropdown .user-info {
   pointer-events: none;
+  color: #f0f1f2;
+  margin: 5px 0;
+  font-weight: bold;
 }
 
 
-
-
-.logout-icon {
-  all: unset;
-  color: whitesmoke;
-  margin: 0 15px;
-  font-size: 30px;
-  transition: 0.1s;
+.profile-dropdown .menu-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(240, 241, 242, 0.2);
+  margin: 10px 0;
 }
 
-.logout-icon:hover {
+.profile-dropdown .menu-item {
+  color: #f0f1f2;
+  text-decoration: none;
   cursor: pointer;
-  color: #D8D9DB;
+  transition: 0.2s ease-in-out;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+.profile-dropdown .menu-item:hover {
+  color: #d9d9d9;
+  font-size: 0.95em;
+}
 
-
+.profile-dropdown .menu-item:active {
+  color: #c4c6c8;
+}
 
 .hidden {
   display: none;
