@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -7,9 +8,23 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
+  const [isShrunk, setIsShrunk] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsShrunk(true);
+      } else {
+        setIsShrunk(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <nav id="nav-bar">
+    <nav id="nav-bar" className={isShrunk ? 'shrink' : ''}>
       <NavLink id="home-link" to="/">
         <HomeButton />
       </NavLink>
