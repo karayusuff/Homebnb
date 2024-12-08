@@ -38,7 +38,7 @@
   justify-content: space-between;
   align-items: center;
   /* padding: 10px 40px; */
-  padding: 8px 60px;
+  padding: 8px 50px;
   background-color: #01000E;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -173,7 +173,14 @@
 
   #nav-bar {
     justify-content: center;
-    padding: 10px 20px;
+    padding: 8px 20px;
+  }
+
+  #nav-bar.shrink {
+    padding: 3px 0px;
+    /* background-color: #02020E;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px; */
   }
 
   #nav-actions {
