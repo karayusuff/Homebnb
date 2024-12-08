@@ -13,6 +13,7 @@ body {
   /* display: flex; */
   /* justify-content: space-between; */
   /* align-items: center; */
-  padding-top: 80px;
+  /* padding-top: 80px; */
+  padding: 80px 40px;
   /* overflow-x: hidden;  */
 }
