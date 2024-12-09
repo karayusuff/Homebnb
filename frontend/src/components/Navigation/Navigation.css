@@ -17,14 +17,15 @@
 }
 
 #nav-bar.shrink {
-  padding: 3px 35px;
-  background-color: #02020E;
+  padding: 3px 50px;
+  background-color: #01000ef3;
+  backdrop-filter: blur(1px);
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 }
 
 #home-logo {
-  width: 225px;
+  width: 200px;
 }
 
 #nav-actions {
@@ -61,8 +62,8 @@
   position: absolute;
   top: 100%;
   right: -15px;
-  background-color: #01000ede;
-  backdrop-filter: blur(5px);
+  background-color: #01000ef3;
+  backdrop-filter: blur(1px);
   border-radius: 10px;
   padding: 20px 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -135,7 +136,7 @@
   } */
 
   #home-logo {
-    width: 180px;
+    width: 150px;
   }
 
   #nav-bar {
