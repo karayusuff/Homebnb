@@ -3,7 +3,7 @@ import './CreateSpotButton.css';
 
 const CreateSpotButton = () => {
   return (
-    <NavLink to="/spots/new" className="create-spot-button">
+    <NavLink to="/spots/new" id="create-spot-button">
       Create a New Spot
     </NavLink>
   );

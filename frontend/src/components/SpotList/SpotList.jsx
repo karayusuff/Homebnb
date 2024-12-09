@@ -3,15 +3,15 @@ import './SpotList.css';
 
 const SpotList = ({ spots }) => {
   return (
-    <div className="spot-list">
+    <div id="spot-list">
       {spots.map((spot) => (
-        <Link to={`/spots/${spot.id}`} className="spot-tile" key={spot.id}>
-          <div className="spot-tile-content">
-            <img src={spot.previewImage} alt={spot.name} className="preview-image" />
-            <div className="spot-info">
-              <div className="spot-header">
-                <h3 className="spot-name" title={spot.name}>{spot.name}</h3>
-                <div className="spot-rating">
+        <Link to={`/spots/${spot.id}`} id="spot-tile" key={spot.id}>
+          <div id="spot-tile-content">
+            <img src={spot.previewImage} alt={spot.name} id="preview-image" />
+            <div id="spot-info">
+              <div id="spot-header">
+                <h3 id="spot-name" title={spot.name}>{spot.name}</h3>
+                <div id="spot-rating">
                   {spot.avgRating ? (
                     <span>★{spot.avgRating}</span>
                   ) : (
@@ -19,8 +19,8 @@ const SpotList = ({ spots }) => {
                   )}
                 </div>
               </div>
-              <p className="spot-location">{spot.city}, {spot.state}</p>
-              <span className="spot-price"><b>${spot.price}</b> / night</span>
+              <p id="spot-location">{spot.city}, {spot.state}</p>
+              <span id="spot-price"><b>${spot.price}</b> / night</span>
             </div>
           </div>
         </Link>
