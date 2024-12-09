@@ -1,73 +1,64 @@
-.spot-list {
+#spot-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 35px;
-  margin: 15px auto;
-  max-width: 1375px;
+  margin: 25px;
 }
 
-.spot-tile {
+#spot-tile {
   text-decoration: none;
   border: none;
   overflow: hidden;
-  background-color: #01000E;
-  /* will-change: transform; */
+  transition: transform 0.3s;
 }
 
-.spot-tile:hover {
+#spot-tile:hover {
   transform: translateY(-2px);
-  /* transition: transform 0.2s; */
-  /* background-color: #01000E;  */
 }
 
-.spot-tile-content {
+#spot-tile-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  background-color: #01000E;
-  /* border: none; */
 }
 
-.preview-image {
+#preview-image {
   width: 100%;
   object-fit: cover;
   aspect-ratio: 1;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-.spot-info {
-  padding: 15px;
+#spot-info {
+  padding: 5px;
+  padding-top: 10px;
 }
 
-.spot-header {
+#spot-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.spot-name {
-  font-size: 1em;
+#spot-name {
+  font-size: 1.1em;
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: beige;
+  color: #F0F1F2;
 }
 
-.spot-location {
-  font-size: 0.9em;
-  color: whitesmoke;
-}
-
-.spot-rating {
+#spot-rating {
   font-weight: bold;
   color: tomato;
-  font-size: 0.9em;
 }
 
-.spot-price {
-  display: block;
-  margin-top: 10px;
-  color: turquoise;
+#spot-location {
+  font-size: 0.9em;
+  color: #F0F1F2;
+}
+
+#spot-price {
+  color: #F2D0A7;
 }
