@@ -38,12 +38,8 @@ const SpotDetails = () => {
 
   if (!spot) return <div>Loading...</div>;
 
-  const reviewCount = reviews.length;
-  const averageRating = reviewCount > 0 ? (
-    reviews.reduce((sum, review) => sum + review.stars, 0) / reviewCount
-  ) : null;
-
-  const ratingDisplay = averageRating ? averageRating.toFixed(2) : "New";
+  const ratingDisplay = spot.avgStarRating;
+  const numReviews = spot.numReviews;
 
   const previewImage = spot.SpotImages?.find((image) => image.preview === true);
   const otherImages = spot.SpotImages?.filter((image) => image.preview !== true);
@@ -89,10 +85,10 @@ const SpotDetails = () => {
             <div className="rating-details">
               <span className="star-rating">
                 <span className="star">★</span> {ratingDisplay}
-                {reviewCount > 0 && (
+                {numReviews > 0 && (
                   <>
                     <span className="separator">·</span>
-                    <span>{reviewCount} {reviewCount > 1 ? 'Reviews' : 'Review'}</span>
+                    <span>{numReviews} {numReviews > 1 ? 'Reviews' : 'Review'}</span>
                   </>
                 )}
               </span>
@@ -114,7 +110,7 @@ const SpotDetails = () => {
         <div className="reviews-summary">
           <div className="rating-details">
             <span className="star-rating">
-            <span>{reviewCount > 0 ? `${reviewCount} ${reviewCount > 1 ? 'Reviews' : 'Review'}` 
+            <span>{numReviews > 0 ? `${numReviews} ${numReviews > 1 ? 'Reviews' : 'Review'}` 
               : "No review yet"}
             </span>
             <span className="separator">·</span>
@@ -128,7 +124,7 @@ const SpotDetails = () => {
             modalComponent={<PostReviewModal spotId={spotId} />}
           />
         )}
-        {reviewCount === 0 && currentUser && !isOwner ? (
+        {numReviews === 0 && currentUser && !isOwner ? (
           <p>Be the first to post a review!</p>
         ) : (
           reviews.map((review) => (
