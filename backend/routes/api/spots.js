@@ -189,22 +189,14 @@ router.get('/:spotId', async (req, res) => {
     }
 
     const reviews = await Review.findAll({
-      where: { spotId }
+      where: { spotId },
+      attributes: ['stars']
     });
 
-    let numReviews = 0;
-    let avgStarRating = 0;
-
-    if (reviews.length > 0) {
-      numReviews = reviews.length;
-
-      let totalStars = 0;
-
-      for (let i = 0; i < reviews.length; i++) {
-        totalStars += reviews[i].stars;
-      }
-      avgStarRating = totalStars / numReviews;
-    }
+    const numReviews = reviews.length;
+    const avgStarRating = numReviews > 0 ? (
+      (reviews.reduce((sum, review) => sum + review.stars, 0) / numReviews).toFixed(1)
+    )  : 'New';
 
     const details = {
       id: spot.id,
@@ -220,8 +212,8 @@ router.get('/:spotId', async (req, res) => {
       price: spot.price,
       createdAt: spot.createdAt,
       updatedAt: spot.updatedAt,
-      numReviews: numReviews,
-      avgStarRating: avgStarRating,
+      numReviews,
+      avgStarRating,
       SpotImages: spot.SpotImages,
       Owner: spot.Owner
     };
@@ -529,8 +521,26 @@ router.get('/', validateQuery, async (req, res) => {
       limit
     });
 
+    const updatedSpots = await Promise.all(
+      spots.map(async (spot) => {
+        const reviews = await Review.findAll({
+          where: { spotId: spot.id },
+          attributes: ['stars']
+        });
+
+        const reviewCount = reviews.length;
+        const avgRating = reviewCount > 0 ? (
+          (reviews.reduce((sum, review) => sum + review.stars, 0) / reviewCount).toFixed(1)
+        ) : 'New';
+
+        spot.avgRating = avgRating;
+
+        return spot;
+      })
+    );    
+
     return res.json({
-      Spots: spots,
+      Spots: updatedSpots,
       page,
       size
     });  

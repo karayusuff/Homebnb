@@ -92,7 +92,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
         validate: {
           min: 0,
-          max: 5        //rating must be between 0 and 5
+          max: 5
         }
       },
       previewImage: {
