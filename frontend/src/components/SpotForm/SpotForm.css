@@ -1,6 +1,6 @@
 .spot-form-container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 20px auto;
   padding: 20px;
   background: #f9f9f9;
   border-radius: 8px;
@@ -93,4 +93,11 @@ button:active {
 button:disabled {
   background: #ccc;
   cursor: not-allowed;
+}
+
+.spot-form-container .error {
+  color: red;
+  font-size: 0.8rem;
+  margin-left: 10px;
+  font-weight: bold;
 }
