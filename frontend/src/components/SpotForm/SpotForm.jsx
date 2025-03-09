@@ -151,6 +151,7 @@ const SpotForm = ({ formType }) => {
               placeholder="Latitude"
               step="0.0001"
             />
+            {errors.lat && <p className="error">{errors.lat}</p>}
           </div>
           <div>
             <label>Longitude (Optional)</label>
@@ -162,6 +163,7 @@ const SpotForm = ({ formType }) => {
               placeholder="Longitude"
               step="0.0001"
             />
+            {errors.lng && <p className="error">{errors.lng}</p>}
           </div>
         </section>
         <section>

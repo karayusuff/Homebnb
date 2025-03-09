@@ -23,15 +23,11 @@ const validateCreateSpot = [
     .notEmpty()
     .withMessage('Country is required.'),
   check('lat')
-    .notEmpty()
-    .withMessage('Latitude is required.')
-    .bail()
+    .optional({ nullable: true, checkFalsy: true })
     .isFloat({ min: -90, max: 90 })
     .withMessage('Latitude must be a number between -90 and 90.'),
   check('lng')
-    .notEmpty()
-    .withMessage('Longitude is required.')
-    .bail()
+    .optional({ nullable: true, checkFalsy: true })
     .isFloat({ min: -180, max: 180 })
     .withMessage('Longitude must be a number between -180 and 180.'),
   check('name')
@@ -67,19 +63,13 @@ const validateEditSpot = [
     .notEmpty()
     .withMessage('Country is required.'),
   check('lat')
-    .optional()
-    .notEmpty()
-    .withMessage('Latitude is required.')
-    .bail()
+    .optional({ nullable: true, checkFalsy: true })
     .isFloat({ min: -90, max: 90 })
     .withMessage('Latitude must be a number between -90 and 90.'),
   check('lng')
-    .optional()
-    .notEmpty()
-    .withMessage('Longitude is required.')
-    .bail()
+    .optional({ nullable: true, checkFalsy: true })
     .isFloat({ min: -180, max: 180 })
-    .withMessage('Longitude must be a number between -180 and 180.'),
+    .withMessage('Longitude must be a number between -180 and 180.'),  
   check('name')
     .optional()
     .notEmpty()
