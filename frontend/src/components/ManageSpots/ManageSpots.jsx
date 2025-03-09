@@ -17,11 +17,6 @@ const ManageSpots = () => {
     dispatch(fetchSpots());
   }, [dispatch]);
 
-  const renderRating = (avgRating) => {
-    if (!avgRating) return <span className="spot-rating">New</span>;
-    return <span className="spot-rating">★ {avgRating.toFixed(2)}</span>;
-  };
-
   const handleDeleteClick = (spotId) => {
     setModalContent(<ConfirmDeleteSpotModal spotId={spotId} />);
   };
@@ -46,7 +41,7 @@ const ManageSpots = () => {
                   <h3>{spot.name}</h3>
                   <p>{spot.city}, {spot.state}</p>
                   <p>${spot.price} / night</p>
-                  {renderRating(spot.avgRating)}
+                  <p>{spot.avgRating}</p>
                 </div>
               </Link>
               <div className="spot-actions">
