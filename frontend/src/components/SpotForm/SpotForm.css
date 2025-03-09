@@ -51,6 +51,8 @@ h2 {
 .spot-form textarea {
   height: 100px;
   resize: vertical;
+  background-color: #ffffff;
+  color: #333;
 }
 
 .spot-form input:focus,
