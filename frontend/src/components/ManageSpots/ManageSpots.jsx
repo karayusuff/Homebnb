@@ -30,10 +30,10 @@ const ManageSpots = () => {
     <div className="manage-spots-container">
       <h1>Manage Spots</h1>
       {userSpots.length === 0 ? (
-        <div>
+        <div className="no-spot-info">
           <p>You haven&apos;t created any spots yet!</p>
           <Link to="/spots/new" className="create-new-spot-link">
-            Create a New Spot
+            Create one here →
           </Link>
         </div>
       ) : (
